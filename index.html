@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="assets/styles/style.css" />
+    <title>My Project</title>
+  </head>
+  <body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <img src="assets/images/finvsfin_logo.jpg" alt="logo" id="logo" />
+      </div>
+    </nav>
+
+    <main>
+      <i class="fa-solid fa-arrow-left" id="backArrow"></i>
+      <div class="container box is-mobile question-page" id="symptoms">
+        <div class="columns is-mobile is-vcentered">
+          <div
+            class="column is-narrow is-1-mobile is-one-fifth-tablet is-offset-1-tablet"
+          >
+            <figure class="image is-87x87">
+              <img src="https://via.placeholder.com/87" alt="pic" />
+            </figure>
+          </div>
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile">
+              First, please tell us a little about yourself.
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile description">
+          This information will be kept confidential and helps us ensure we're
+          able to provide you with care.
+        </p>
+
+        <form action="#">
+          <div class="field">
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="First Name"
+                id="firstName"
+              />
+            </div>
+          </div>
+
+          <div class="field">
+            <div class="control">
+              <input
+                class="input"
+                type="text"
+                placeholder="Zip Code"
+                id="zipCode"
+              />
+            </div>
+          </div>
+          <p class="is-size-6">
+            NOTE: This quiz is intended for people 18 years and older.
+          </p>
+          <button
+            type="submit"
+            class="button is-fullwidth is-primary submit"
+            disabled
+          >
+            Next
+          </button>
+        </form>
+      </div>
+      <div class="container box is-mobile question-page" id="symptoms">
+        <div class="columns is-mobile is-vcentered">
+          <div
+            class="column is-narrow is-1-mobile is-one-fifth-tablet is-offset-1-tablet"
+          >
+            <figure class="image is-87x87">
+              <img src="https://via.placeholder.com/87" alt="pic" />
+            </figure>
+          </div>
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile">
+              What can we help you with today?
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile description">
+          Select all that apply
+        </p>
+
+        <hr />
+
+        <form action="#">
+          <div class="field">
+            <div class="control">
+              <label class="checkbox" for="depression">
+                <input type="checkbox" id="depression" name="depression" />
+                Depression
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label class="checkbox" for="anxiety">
+                <input type="checkbox" id="anxiety" name="anxiety" />
+                Anxiety
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label class="checkbox" for="insomnia">
+                <input type="checkbox" id="insomnia" name="insomnia" />
+                Insomnia
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label class="checkbox" for="panic">
+                <input type="checkbox" id="panic" name="panic" />
+                Panic
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label class="checkbox" for="ocd">
+                <input type="checkbox" id="ocd" name="ocd" />
+                OCD
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label class="checkbox" for="ptsd">
+                <input type="checkbox" id="ptsd" name="ptsd" />
+                PTSD
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label class="checkbox" for="social-anxiety">
+                <input
+                  type="checkbox"
+                  id="social-anxiety"
+                  name="social-anxiety"
+                />
+                Social Anxiety
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label class="checkbox" for="phobia">
+                <input type="checkbox" id="phobia" name="phobia" />
+                Phobia
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label class="checkbox" for="postpartum">
+                <input type="checkbox" id="postpartum" name="postpartum" />
+                Postpartum Depression
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label class="checkbox" for="burnout">
+                <input type="checkbox" id="burnout" name="burnout" />
+                Burnout
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label class="checkbox" for="eating-disorder">
+                <input
+                  type="checkbox"
+                  id="eating-disorder"
+                  name="eating-disorder"
+                />
+                Binge Eating / Eating Disorders
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label class="checkbox" for="not-sure">
+                <input type="checkbox" id="not-sure" name="not-sure" />
+                I'm Not Sure
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="button is-fullwidth is-primary submit">
+            Next
+          </button>
+        </form>
+      </div>
+      <div class="container box is-mobile question-page" id="summary">
+        <div class="columns is-mobile is-vcentered">
+          <div
+            class="column is-narrow is-1-mobile is-one-fifth-tablet is-offset-1-tablet"
+          >
+            <figure class="image is-87x87">
+              <img src="https://via.placeholder.com/87" alt="pic" />
+            </figure>
+          </div>
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile">
+              Here is a summary of your data
+            </p>
+          </div>
+        </div>
+        <hr />
+        <div id="userInfo"></div>
+      </div>
+    </main>
+    <script src="assets/scripts/index.js"></script>
+  </body>
+</html>

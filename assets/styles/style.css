@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1;
+    text-align: left;
+    overflow: hidden;
+}
+
+main {
+    margin: 0 auto;
+    padding: 1.5rem;
+    background-color: rgb(220, 230, 235);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    max-width: 768px;
+    border-radius: 10px;
+}
+
+p {
+    overflow: hidden;
+}
+
+figure > img {
+    min-width: 87px;
+    min-height: 87px;
+    border-radius: 50px;
+}
+
+form {
+    margin: 1.5rem;
+}
+
+.button {
+    background-color: rgb(220, 230, 235);
+}
+
+.box {
+    height: 100%;
+    max-width: 768px;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 3rem;
+    padding-bottom: 0;
+}
+
+.description {
+    margin: 1.5rem;
+}
+
+.input {
+    font-size: 1.25rem;
+}
+
+.submit {
+    margin-top: 1.5rem;
+}
+
+#logo {
+    width: 200px;
+    height: 110px;
+}
+
+#backArrow {
+    display: none;
+    margin: 1rem;
+}
+
+#backArrow:hover {
+    cursor: pointer;
+}
+
+@media (max-width: 667px) {
+    #logo {
+    width: 150px;
+    height: 70px;
+    }
+    main {
+        height: 100vh;
+    }
+}
