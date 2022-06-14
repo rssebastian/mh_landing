@@ -18,78 +18,42 @@
     <title>My Project</title>
   </head>
   <body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-      <div class="navbar-brand">
-        <img src="assets/images/finvsfin_logo.jpg" alt="logo" id="logo" />
+    <section class="hero is-primary">
+      <div class="hero-body">
+        <p class="title">Take our Quick Anxiety and Depression Quiz</p>
       </div>
-    </nav>
-
+    </section>
     <main>
       <i class="fa-solid fa-arrow-left" id="backArrow"></i>
-      <div class="container box is-mobile question-page" id="symptoms">
-        <div class="columns is-mobile is-vcentered">
-          <div
-            class="column is-narrow is-1-mobile is-one-fifth-tablet is-offset-1-tablet"
-          >
-            <figure class="image is-87x87">
-              <img src="https://via.placeholder.com/87" alt="pic" />
-            </figure>
-          </div>
-          <div class="column">
-            <p class="is-size-3 is-size-6-mobile">
-              First, please tell us a little about yourself.
-            </p>
-          </div>
-        </div>
+      <div class="container box is-mobile question-page" id="intro">
+        <p class="is-size-5-tablet is-size-6-mobile description">
+          While we all feel anxious and overwhelmed at times, it's hard to know
+          if what you're feeling is 'normal'. While talking to a licensed
+          medical professional is the only way to get a proper diagnosis, doing
+          so can be expensive and time-consuming, so we created this simple quiz
+          to help you decide if seeking professional help is the right next
+          step.
+        </p>
 
         <p class="is-size-5-tablet is-size-6-mobile description">
           This information will be kept confidential and helps us ensure we're
           able to provide you with care.
         </p>
 
-        <form action="#">
-          <div class="field">
-            <div class="control">
-              <input
-                class="input"
-                type="text"
-                placeholder="First Name"
-                id="firstName"
-              />
-            </div>
-          </div>
-
-          <div class="field">
-            <div class="control">
-              <input
-                class="input"
-                type="text"
-                placeholder="Zip Code"
-                id="zipCode"
-              />
-            </div>
-          </div>
-          <p class="is-size-6">
-            NOTE: This quiz is intended for people 18 years and older.
-          </p>
-          <button
-            type="submit"
-            class="button is-fullwidth is-primary submit"
-            disabled
-          >
-            Next
-          </button>
+        <button type="submit" class="button is-fullwidth is-primary" id="quizStart">
+          Start Quiz
+        </button>
+        <p class="is-size-6">
+          NOTE: This quiz does <strong>not</strong> provide a professional
+          diagnosis and is not intended as a substitute, but rather only a
+          precursor, to consulting a licensed physician.
+        </p>
         </form>
       </div>
+
+
       <div class="container box is-mobile question-page" id="symptoms">
         <div class="columns is-mobile is-vcentered">
-          <div
-            class="column is-narrow is-1-mobile is-one-fifth-tablet is-offset-1-tablet"
-          >
-            <figure class="image is-87x87">
-              <img src="https://via.placeholder.com/87" alt="pic" />
-            </figure>
-          </div>
           <div class="column">
             <p class="is-size-3 is-size-6-mobile">
               What can we help you with today?
@@ -213,15 +177,919 @@
           </button>
         </form>
       </div>
+
+      <div class="container box is-mobile question-page" id="interest">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Over the past 2 weeks, how often have you experienced the following?
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Little interest or pleasure in doing things.
+        </p>
+
+        <hr />
+
+        <form name="interest" action="#">
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="answer" value="3">
+              Nearly Every Day
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="2">
+              More Than Half of Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Several Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="0">
+              Not At All
+            </label>
+          </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="down">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Over the past 2 weeks, how often have you experienced the following?
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Feeling down, depressed, or hopeless.
+        </p>
+
+        <hr />
+
+        <form name="down" action="#">
+          <div class="field">
+            <label class="radio" for="3">
+              <input type="radio" name="answer" value="3">
+              Nearly Every Day
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="2">
+                <input type="radio" name="answer" value="2">
+                More Than Half of Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="1">
+                Several Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="0">
+                <input type="radio" name="answer" value="0">
+                Not At All
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="sleep">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Over the past 2 weeks, how often have you experienced the following?
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Trouble falling or staying asleep, or sleeping too much.
+        </p>
+
+        <hr />
+
+        <form name="sleep" action="#">
+          <div class="field">
+            <label class="radio" for="3">
+              <input type="radio" name="answer" value="3">
+              Nearly Every Day
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="2">
+                <input type="radio" name="answer" value="2">
+                More Than Half of Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="1">
+                Several Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="0">
+                <input type="radio" name="answer" value="0">
+                Not At All
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="energy">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Over the past 2 weeks, how often have you experienced the following?
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Feeling tired or having little energy.
+        </p>
+
+        <hr />
+
+        <form name="energy" action="#">
+          <div class="field">
+            <label class="radio" for="3">
+              <input type="radio" name="answer" value="3">
+              Nearly Every Day
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="2">
+                <input type="radio" name="answer" value="2">
+                More Than Half of Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="1">
+                Several Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="0">
+                <input type="radio" name="answer" value="0">
+                Not At All
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="appetite">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Over the past 2 weeks, how often have you experienced the following?
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Poor appetite or overeating.
+        </p>
+
+        <hr />
+
+        <form name="appetite" action="#">
+          <div class="field">
+            <label class="radio" for="3">
+              <input type="radio" name="answer" value="3">
+              Nearly Every Day
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="2">
+                <input type="radio" name="answer" value="2">
+                More Than Half of Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="1">
+                Several Days
+              </label>
+            </div>
+            <label class="radio" for="0">
+              <input type="radio" name="answer" value="0">
+              Not At All
+            </label>
+          </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="failure">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Over the past 2 weeks, how often have you experienced the following?
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Feeling bad about yourself - or that you are a failure or have let yourself or your family down.
+        </p>
+
+        <hr />
+
+        <form name="failure" action="#">
+          <div class="field">
+            <label class="radio" for="3">
+              <input type="radio" name="answer" value="3">
+              Nearly Every Day
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="2">
+                <input type="radio" name="answer" value="2">
+                More Than Half of Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="1">
+                Several Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="0">
+                <input type="radio" name="answer" value="0">
+                Not At All
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="focus">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Over the past 2 weeks, how often have you experienced the following?
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Trouble concentrating on things, such as reading the news or watching television.
+        </p>
+
+        <hr />
+
+        <form name="focus" action="#">
+          <div class="field">
+            <label class="radio" for="3">
+              <input type="radio" name="answer" value="3">
+              Nearly Every Day
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="2">
+                <input type="radio" name="answer" value="2">
+                More Than Half of Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="1">
+                Several Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="0">
+                <input type="radio" name="answer" value="1">
+                Not At All
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="movement">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Over the past 2 weeks, how often have you experienced the following?
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Moving or speaking slowly that other people have noticed. Or the opposite - being so restless or fidgety that you have been moving around a lot more than usual.
+        </p>
+
+        <hr />
+
+        <form name="movement" action="#">
+          <div class="field">
+            <label class="radio" for="3">
+              <input type="radio" name="answer" value="3">
+              Nearly Every Day
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="2">
+                <input type="radio" name="answer" value="2">
+                More Than Half of Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="1">
+                Several Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="0">
+                <input type="radio" name="answer" value="0">
+                Not At All
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="selfHarm">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Over the past 2 weeks, how often have you experienced the following?
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Thought that you would be better off dead, or of hurting yourself in some way.
+        </p>
+
+        <hr />
+
+        <form name="selfHarm" action="#">
+          <div class="field">
+            <label class="radio" for="3">
+              <input type="radio" name="answer" value="3">
+              Nearly Every Day
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="2">
+                <input type="radio" name="answer" value="2">
+                More Than Half of Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="1">
+                Several Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="0">
+                <input type="radio" name="answer" value="0">
+                Not At All
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="selfHarmDetail">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              You indicated that you have had some thoughts about hurting yourself or that you'd be better off dead.
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Would you describe these thoughts recently as:
+        </p>
+
+        <hr />
+
+        <form name="selfHarmDetail" action="#">
+          <div class="field">
+            <label class="radio" for="0">
+              <input type="radio" name="answer" value="0">
+              A Vague or General Thought or Feeling
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="1">
+                Something I Have Made Specific Plans For
+              </label>
+            </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="resources">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <div class="title">
+              Crisis Resources
+            </div>
+
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Many people experience this kind of thinking with depression. If these thoughts become more specific or persistent, it's important to get help and Brightside is not a substitute for crisis care.
+            </p>
+
+            <strong><p class="is-size-3 is-size-6-mobile subtitle">
+              Here are three ways that you can get help if you are in distress or crisis now or at any point:
+            </p></strong>
+            <div class="content">
+              <ol type="1">
+                <li><strong>Visit</strong><p class="is-size-3 is-size-6-mobile subtitle">
+                  If you are having a medical or mental health emergency, call 911 or go to your local emergency department.
+                </p></li>
+                <li><strong>Text</strong><p class="is-size-3 is-size-6-mobile subtitle">
+                  The Crisis Text Line provides 24 hour free and confidential help. Text 'HOME' to 741-741 to connect with a counselor immediately.
+                </p></li>
+                <li><strong>Call</strong><p class="is-size-3 is-size-6-mobile subtitle">
+                  You can call the Suicide Prevention Lifeline at 800-273-TALK to talk with a live counselor 24 hours per day.
+                </p></li>
+              </ol>
+            </div>
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              You can still continue with Brightside if you choose, as antidepressants and other treatments can be extremely helpful in people with serious depression. We also recommend finding a therapist who can help you.
+            </p>
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Please be aware that starting antidepressants can sometimes lead to a short term increase in suicidal thoughts among people who already have them, especially those age 24 or younger. It's critical for you to be in close communication with your doctor and to reach out for help if your symptoms continue or worsen.
+            </p>
+            <button type="submit" class="button is-fullwidth is-primary" id="quizStart">
+              I Understand
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="container box is-mobile question-page" id="help">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <div class="title">
+              If you’re planning to hurt yourself, it's important for you to get help right away.
+            </div>
+            <strong><p class="is-size-3 is-size-6-mobile subtitle">
+              Here are three ways that you can get help if you are in distress or crisis now or at any point:
+            </p></strong>
+            <div class="content">
+              <ol type="1">
+                <li><strong>Visit</strong><p class="is-size-3 is-size-6-mobile subtitle">
+                  If you are having a medical or mental health emergency, call 911 or go to your local emergency department.
+                </p></li>
+                <li><strong>Text</strong><p class="is-size-3 is-size-6-mobile subtitle">
+                  The Crisis Text Line provides 24 hour free and confidential help. Text 'HOME' to 741-741 to connect with a counselor immediately.
+                </p></li>
+                <li><strong>Call</strong><p class="is-size-3 is-size-6-mobile subtitle">
+                  You can call the Suicide Prevention Lifeline at 800-273-TALK to talk with a live counselor 24 hours per day.
+                </p></li>
+              </ol>
+            </div>
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Help is always available. We also recommend reaching out to a family member or friend to let them know that you are having these thoughts and ask for help and support.
+            </p>
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Unfortunately, the Brightside service is not appropriate to handle people with the severity of depression that you are experiencing. If you are having suicidal thoughts, it's important for you to connect with a clinician like a doctor or therapist to discuss the range of treatment options that are available to you. We urge you to do so immediately and share our sincere best wishes in support of your recovery.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="container box is-mobile question-page" id="tasks">
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          How difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?
+        </p>
+
+        <hr />
+
+        <form name="tasks" action="#">
+          <div class="field">
+            <label class="radio" for="3">
+              <input type="radio" name="answer" value="3">
+              Extremely Difficult
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="2">
+                <input type="radio" name="answer" value="2">
+                Very Difficult
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="1">
+                Somewhat Difficult
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="0">
+                <input type="radio" name="answer" value="0">
+                Not Difficult At All
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="anxious">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Over the past 2 weeks, how often have you been bothered by the following problems?
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Feeling nervous, anxious, or on edge.
+        </p>
+
+        <hr />
+
+        <form name="anxious" action="#">
+          <div class="field">
+            <label class="radio" for="3">
+              <input type="radio" name="answer" value="3">
+              Nearly Every Day
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="2">
+                <input type="radio" name="answer" value="2">
+                More Than Half of Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="1">
+                Several Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="0">
+                <input type="radio" name="answer" value="0">
+                Not At All
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="worryControl">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Over the past 2 weeks, how often have you been bothered by the following problems?
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Not being able to stop or control worrying.
+        </p>
+
+        <hr />
+
+        <form name="worryControl" action="#">
+          <div class="field">
+            <label class="radio" for="3">
+              <input type="radio" name="answer" value="3">
+              Nearly Every Day
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="2">
+                <input type="radio" name="answer" value="2">
+                More Than Half of Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="1">
+                Several Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="0">
+                <input type="radio" name="answer" value="0">
+                Not At All
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="worryThings">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Over the past 2 weeks, how often have you been bothered by the following problems?
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Worrying too much about different things.
+        </p>
+
+        <hr />
+
+        <form name="worryThings" action="#">
+          <div class="field">
+            <label class="radio" for="3">
+              <input type="radio" name="answer" value="3">
+              Nearly Every Day
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="2">
+                <input type="radio" name="answer" value="2">
+                More Than Half of Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="1">
+                Several Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="0">
+                <input type="radio" name="answer" value="0">
+                Not At All
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="relax">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Over the past 2 weeks, how often have you been bothered by the following problems?
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Trouble relaxing
+        </p>
+
+        <hr />
+
+        <form name="relax" action="#">
+          <div class="field">
+            <label class="radio" for="3">
+              <input type="radio" name="answer" value="3">
+              Nearly Every Day
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="2">
+                <input type="radio" name="answer" value="2">
+                More Than Half of Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="1">
+                Several Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="0">
+                <input type="radio" name="answer" value="0">
+                Not At All
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="worryThings">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Over the past 2 weeks, how often have you been bothered by the following problems?
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Being so restless that it is hard to sit still.
+        </p>
+
+        <hr />
+
+        <form name="worryThings" action="#">
+          <div class="field">
+            <label class="radio" for="3">
+              <input type="radio" name="answer" value="3">
+              Nearly Every Day
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="2">
+                <input type="radio" name="answer" value="2">
+                More Than Half of Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="1">
+                Several Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="0">
+                <input type="radio" name="answer" value="0">
+                Not At All
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="annoyed">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Over the past 2 weeks, how often have you been bothered by the following problems?
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Becoming easily annoyed or irritable.
+        </p>
+
+        <hr />
+
+        <form name="annoyed" action="#">
+          <div class="field">
+            <label class="radio" for="3">
+              <input type="radio" name="answer" value="3">
+              Nearly Every Day
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="2">
+                <input type="radio" name="answer" value="2">
+                More Than Half of Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="1">
+                Several Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="0">
+                <input type="radio" name="answer" value="0">
+                Not At All
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="afraid">
+        <div class="columns is-mobile is-vcentered">
+          <div class="column">
+            <p class="is-size-3 is-size-6-mobile subtitle">
+              Over the past 2 weeks, how often have you been bothered by the following problems?
+            </p>
+          </div>
+        </div>
+
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Feeling afraid as if something awful might happen.
+        </p>
+
+        <hr />
+
+        <form name="afraid" action="#">
+          <div class="field">
+            <label class="radio" for="3">
+              <input type="radio" name="answer" value="3">
+              Nearly Every Day
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="2">
+                <input type="radio" name="answer" value="2">
+                More Than Half of Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="1">
+                Several Days
+              </label>
+            </div>
+            <div class="field">
+              <label class="radio" for="0">
+                <input type="radio" name="answer" value="0">
+                Not At All
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="treatment">
+        <p class="is-size-5-tablet is-size-6-mobile title">
+          Have you tried anxiety or depression treatment before?
+        </p>
+
+        <hr />
+
+        <form name="treatment" action="#">
+          <div class="field">
+            <label class="radio" for="0">
+              <input type="radio" name="answer" value="1">
+              Yes
+            </label>
+          </div>
+            <div class="field">
+              <label class="radio" for="1">
+                <input type="radio" name="answer" value="0">
+                No
+              </label>
+            </div>
+        </form>
+      </div>
+
+      <div class="container box is-mobile question-page" id="treatmentsTried">
+        <p class="is-size-3 is-size-6-mobile title">
+          What type of treatment have you tried?
+        </p>
+
+        <p class="is-size-5-tablet is-size-6-mobile description">
+          Select all that apply
+        </p>
+
+        <hr />
+
+        <form name="treatmentsTried" action="#">
+          <div class="field">
+            <div class="control">
+              <label class="checkbox" for="antidepressants">
+                <input type="checkbox" id="antidepressants" name="antidepressants" />
+                Antidepressants (e.g. Lexapro, Wellbutrin)
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label class="checkbox" for="inPersonTherapist">
+                <input type="checkbox" id="inPersonTherapist" name="inPersonTherapist" />
+                Seeing an in-person therapist
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label class="checkbox" for="onlineTherapist">
+                <input type="checkbox" id="onlineTherapist" name="onlineTherapist" />
+                Seeing an online therapist
+              </label>
+            </div>
+          </div>
+          <div class="field">
+            <div class="control">
+              <label class="checkbox" for="otherPrescriptions">
+                <input type="checkbox" id="otherPrescriptions" name="otherPrescriptions" />
+                Other Prescriptions (e.g. Xanax, Ambien)
+              </label>
+            </div>
+          </div>
+          <button type="submit" class="button is-fullwidth is-primary submit">
+            Next
+          </button>
+        </form>
+      </div>
+
       <div class="container box is-mobile question-page" id="summary">
         <div class="columns is-mobile is-vcentered">
-          <div
-            class="column is-narrow is-1-mobile is-one-fifth-tablet is-offset-1-tablet"
-          >
-            <figure class="image is-87x87">
-              <img src="https://via.placeholder.com/87" alt="pic" />
-            </figure>
-          </div>
           <div class="column">
             <p class="is-size-3 is-size-6-mobile">
               Here is a summary of your data
@@ -231,7 +1099,55 @@
         <hr />
         <div id="userInfo"></div>
       </div>
+
+      
     </main>
+
+    <footer class="footer">
+      <div class="columns">
+        <div class="column columns">
+          <div class="column is-one-fifth icon is-large">
+            <i class="fa-solid fa-phone fa-5x"></i>
+          </div>
+          <div class="column">
+            <h4 class="title is-4">
+              If this is a life-threatening emergency or if you need to talk:
+            </h4>
+            <h4 class="subtitle is-4">
+              <a href="https://suicidepreventionlifeline.org/"
+                >National Suicide Prevention Lifeline:</a
+              >
+              800-273-8255
+            </h4>
+            <h5 class="subtitle is-5">
+              Help is available. Speak with someone today.
+            </h5>
+            <h5 class="subtitle is-5">
+              Hours: Available 24 hours. Languages: English, Spanish.
+            </h5>
+          </div>
+        </div>
+        <div class="column columns">
+          <div class="column is-one-fifth icon is-large">
+            <i class="fa-solid fa-clipboard-list fa-5x"></i>
+          </div>
+          <div class="column">
+            <h4 class="title is-4">About this test:</h4>
+            <h5 class="subtitle is-5">
+              This test is adapted from the
+              <a
+                href="https://patient.info/doctor/generalised-anxiety-disorder-assessment-gad-7"
+                >Generalised Anxiety Disorder GAD-7</a
+              >
+              and intended to help patients determine if they are a good fit for
+              treatment, <strong>NOT</strong> to medically diagnose their
+              condition.
+            </h5>
+          </div>
+        </div>
+      </div>
+    </footer>
+
     <script src="assets/scripts/index.js"></script>
   </body>
 </html>

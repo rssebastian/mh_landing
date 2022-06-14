@@ -1,5 +1,4 @@
-const firstName = document.getElementById('firstName');
-const zipCode = document.getElementById('zipCode');
+const quizStart = document.getElementById('quizStart');
 const nextButtons = Array.from(document.querySelectorAll('.submit'));
 const backArrow = document.getElementById('backArrow');
 const questionPages = Array.from(document.querySelectorAll('.question-page'));
@@ -11,39 +10,23 @@ for (let i = 1; i < questionPages.length; i++) {
 
 const userData = [];
 let currentPage = 0;
-let validFn,
-  validZip = false;
 
-firstName.addEventListener('keyup', (e) => {
-  if (e.target.value.length > 0) {
-    e.target.classList.remove('is-danger');
-    e.target.classList.add('is-success');
-    validFn = true;
-    if (validZip) {
-      nextButtons[currentPage].disabled = false;
-    }
-  } else {
-    e.target.classList.remove('is-success');
-    e.target.classList.add('is-danger');
-    validFn = false;
-    nextButtons[currentPage].disabled = true;
-  }
+console.log('🚀 ~ file: index.js ~ line 5 ~ questionPages', questionPages);
+
+quizStart.addEventListener('click', () => {
+  questionPages[currentPage].style.display = 'none';
+  questionPages[++currentPage].style.display = 'block';
 });
 
-zipCode.addEventListener('keyup', (e) => {
-  validZip = /(^\d{5}$)|(^\d{5}-\d{4}$)/.test(e.target.value);
-  if (validZip) {
-    e.target.classList.remove('is-danger');
-    e.target.classList.add('is-success');
-    if (validFn) {
-      nextButtons[currentPage].disabled = false;
-    }
-  } else {
-    e.target.classList.remove('is-success');
-    e.target.classList.add('is-danger');
-    nextButtons[currentPage].disabled = true;
-  }
-});
+const inputs = Array.from(document.querySelectorAll("input[type='radio']"));
+inputs.forEach((input) =>
+  input.addEventListener('click', (e) => {
+    console.log(
+      '🚀 ~ file: index.js ~ line 26 ~ input.addEventListener ~ e',
+      parseInt(e.target.value)
+    );
+  })
+);
 
 forms.forEach((form) => {
   form.addEventListener('submit', (e) => {
