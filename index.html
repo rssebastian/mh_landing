@@ -24,7 +24,6 @@
       </div>
     </section>
     <main>
-      <i class="fa-solid fa-arrow-left" id="backArrow"></i>
       <div class="container box is-mobile question-page" id="intro">
         <p class="is-size-5-tablet is-size-6-mobile description">
           While we all feel anxious and overwhelmed at times, it's hard to know
@@ -40,7 +39,7 @@
           able to provide you with care.
         </p>
 
-        <button type="submit" class="button is-fullwidth is-primary" id="quizStart">
+        <button type="submit" class="button is-fullwidth is-primary nextButton" id="quizStart">
           Start Quiz
         </button>
         <p class="is-size-6">
@@ -53,6 +52,7 @@
 
 
       <div class="container box is-mobile question-page" id="symptoms">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile">
@@ -67,7 +67,7 @@
 
         <hr />
 
-        <form action="#">
+        <form name="symptoms" action="#">
           <div class="field">
             <div class="control">
               <label class="checkbox" for="depression">
@@ -179,6 +179,7 @@
       </div>
 
       <div class="container box is-mobile question-page" id="interest">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile subtitle">
@@ -219,6 +220,7 @@
       </div>
 
       <div class="container box is-mobile question-page" id="down">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile subtitle">
@@ -234,35 +236,32 @@
         <hr />
 
         <form name="down" action="#">
-          <div class="field">
-            <label class="radio" for="3">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="3">
               Nearly Every Day
             </label>
-          </div>
-            <div class="field">
-              <label class="radio" for="2">
-                <input type="radio" name="answer" value="2">
-                More Than Half of Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="1">
-                Several Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="0">
-                <input type="radio" name="answer" value="0">
-                Not At All
-              </label>
-            </div>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="2">
+              More Than Half of Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Several Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="0">
+              Not At All
+            </label>
           </div>
         </form>
       </div>
 
       <div class="container box is-mobile question-page" id="sleep">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile subtitle">
@@ -278,35 +277,32 @@
         <hr />
 
         <form name="sleep" action="#">
-          <div class="field">
-            <label class="radio" for="3">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="3">
               Nearly Every Day
             </label>
-          </div>
-            <div class="field">
-              <label class="radio" for="2">
-                <input type="radio" name="answer" value="2">
-                More Than Half of Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="1">
-                Several Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="0">
-                <input type="radio" name="answer" value="0">
-                Not At All
-              </label>
-            </div>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="2">
+              More Than Half of Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Several Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="0">
+              Not At All
+            </label>
           </div>
         </form>
       </div>
 
       <div class="container box is-mobile question-page" id="energy">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile subtitle">
@@ -322,35 +318,32 @@
         <hr />
 
         <form name="energy" action="#">
-          <div class="field">
-            <label class="radio" for="3">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="3">
               Nearly Every Day
             </label>
-          </div>
-            <div class="field">
-              <label class="radio" for="2">
-                <input type="radio" name="answer" value="2">
-                More Than Half of Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="1">
-                Several Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="0">
-                <input type="radio" name="answer" value="0">
-                Not At All
-              </label>
-            </div>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="2">
+              More Than Half of Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Several Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="0">
+              Not At All
+            </label>
           </div>
         </form>
       </div>
 
       <div class="container box is-mobile question-page" id="appetite">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile subtitle">
@@ -366,25 +359,23 @@
         <hr />
 
         <form name="appetite" action="#">
-          <div class="field">
-            <label class="radio" for="3">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="3">
               Nearly Every Day
             </label>
-          </div>
-            <div class="field">
-              <label class="radio" for="2">
-                <input type="radio" name="answer" value="2">
-                More Than Half of Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="1">
-                Several Days
-              </label>
-            </div>
-            <label class="radio" for="0">
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="2">
+              More Than Half of Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Several Days
+            </label>
+            <br>
+            <label class="radio">
               <input type="radio" name="answer" value="0">
               Not At All
             </label>
@@ -393,6 +384,7 @@
       </div>
 
       <div class="container box is-mobile question-page" id="failure">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile subtitle">
@@ -408,35 +400,32 @@
         <hr />
 
         <form name="failure" action="#">
-          <div class="field">
-            <label class="radio" for="3">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="3">
               Nearly Every Day
             </label>
-          </div>
-            <div class="field">
-              <label class="radio" for="2">
-                <input type="radio" name="answer" value="2">
-                More Than Half of Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="1">
-                Several Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="0">
-                <input type="radio" name="answer" value="0">
-                Not At All
-              </label>
-            </div>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="2">
+              More Than Half of Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Several Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="0">
+              Not At All
+            </label>
           </div>
         </form>
       </div>
 
       <div class="container box is-mobile question-page" id="focus">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile subtitle">
@@ -452,35 +441,32 @@
         <hr />
 
         <form name="focus" action="#">
-          <div class="field">
-            <label class="radio" for="3">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="3">
               Nearly Every Day
             </label>
-          </div>
-            <div class="field">
-              <label class="radio" for="2">
-                <input type="radio" name="answer" value="2">
-                More Than Half of Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="1">
-                Several Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="0">
-                <input type="radio" name="answer" value="1">
-                Not At All
-              </label>
-            </div>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="2">
+              More Than Half of Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Several Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="0">
+              Not At All
+            </label>
           </div>
         </form>
       </div>
 
       <div class="container box is-mobile question-page" id="movement">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile subtitle">
@@ -496,35 +482,32 @@
         <hr />
 
         <form name="movement" action="#">
-          <div class="field">
-            <label class="radio" for="3">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="3">
               Nearly Every Day
             </label>
-          </div>
-            <div class="field">
-              <label class="radio" for="2">
-                <input type="radio" name="answer" value="2">
-                More Than Half of Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="1">
-                Several Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="0">
-                <input type="radio" name="answer" value="0">
-                Not At All
-              </label>
-            </div>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="2">
+              More Than Half of Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Several Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="0">
+              Not At All
+            </label>
           </div>
         </form>
       </div>
 
       <div class="container box is-mobile question-page" id="selfHarm">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile subtitle">
@@ -540,35 +523,32 @@
         <hr />
 
         <form name="selfHarm" action="#">
-          <div class="field">
-            <label class="radio" for="3">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="3">
               Nearly Every Day
             </label>
-          </div>
-            <div class="field">
-              <label class="radio" for="2">
-                <input type="radio" name="answer" value="2">
-                More Than Half of Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="1">
-                Several Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="0">
-                <input type="radio" name="answer" value="0">
-                Not At All
-              </label>
-            </div>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="2">
+              More Than Half of Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Several Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="0">
+              Not At All
+            </label>
           </div>
         </form>
       </div>
 
       <div class="container box is-mobile question-page" id="selfHarmDetail">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile subtitle">
@@ -584,22 +564,23 @@
         <hr />
 
         <form name="selfHarmDetail" action="#">
-          <div class="field">
-            <label class="radio" for="0">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="0">
               A Vague or General Thought or Feeling
             </label>
           </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="1">
-                Something I Have Made Specific Plans For
-              </label>
-            </div>
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Something I Have Made Specific Plans For
+            </label>
+          </div>
         </form>
       </div>
 
       <div class="container box is-mobile question-page" id="resources">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <div class="title">
@@ -632,7 +613,7 @@
             <p class="is-size-3 is-size-6-mobile subtitle">
               Please be aware that starting antidepressants can sometimes lead to a short term increase in suicidal thoughts among people who already have them, especially those age 24 or younger. It's critical for you to be in close communication with your doctor and to reach out for help if your symptoms continue or worsen.
             </p>
-            <button type="submit" class="button is-fullwidth is-primary" id="quizStart">
+            <button type="submit" class="button is-fullwidth is-primary" id="resourcesRead">
               I Understand
             </button>
           </div>
@@ -640,6 +621,7 @@
       </div>
 
       <div class="container box is-mobile question-page" id="help">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <div class="title">
@@ -665,13 +647,14 @@
               Help is always available. We also recommend reaching out to a family member or friend to let them know that you are having these thoughts and ask for help and support.
             </p>
             <p class="is-size-3 is-size-6-mobile subtitle">
-              Unfortunately, the Brightside service is not appropriate to handle people with the severity of depression that you are experiencing. If you are having suicidal thoughts, it's important for you to connect with a clinician like a doctor or therapist to discuss the range of treatment options that are available to you. We urge you to do so immediately and share our sincere best wishes in support of your recovery.
+              Unfortunately, we are not properly equipped to handle people with the severity of depression that you are experiencing. If you are having suicidal thoughts, it's important for you to connect with a clinician like a doctor or therapist to discuss the range of treatment options that are available to you. We urge you to do so immediately and share our sincere best wishes in support of your recovery.
             </p>
           </div>
         </div>
       </div>
 
       <div class="container box is-mobile question-page" id="tasks">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <p class="is-size-5-tablet is-size-6-mobile title">
           How difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?
         </p>
@@ -679,35 +662,32 @@
         <hr />
 
         <form name="tasks" action="#">
-          <div class="field">
-            <label class="radio" for="3">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="3">
               Extremely Difficult
             </label>
-          </div>
-            <div class="field">
-              <label class="radio" for="2">
-                <input type="radio" name="answer" value="2">
-                Very Difficult
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="1">
-                Somewhat Difficult
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="0">
-                <input type="radio" name="answer" value="0">
-                Not Difficult At All
-              </label>
-            </div>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="2">
+              Very Difficult
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Somewhat Difficult
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="0">
+              Not Difficult At All
+            </label>
           </div>
         </form>
       </div>
 
       <div class="container box is-mobile question-page" id="anxious">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile subtitle">
@@ -723,35 +703,32 @@
         <hr />
 
         <form name="anxious" action="#">
-          <div class="field">
-            <label class="radio" for="3">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="3">
               Nearly Every Day
             </label>
-          </div>
-            <div class="field">
-              <label class="radio" for="2">
-                <input type="radio" name="answer" value="2">
-                More Than Half of Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="1">
-                Several Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="0">
-                <input type="radio" name="answer" value="0">
-                Not At All
-              </label>
-            </div>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="2">
+              More Than Half of Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Several Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="0">
+              Not At All
+            </label>
           </div>
         </form>
       </div>
 
       <div class="container box is-mobile question-page" id="worryControl">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile subtitle">
@@ -767,35 +744,32 @@
         <hr />
 
         <form name="worryControl" action="#">
-          <div class="field">
-            <label class="radio" for="3">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="3">
               Nearly Every Day
             </label>
-          </div>
-            <div class="field">
-              <label class="radio" for="2">
-                <input type="radio" name="answer" value="2">
-                More Than Half of Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="1">
-                Several Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="0">
-                <input type="radio" name="answer" value="0">
-                Not At All
-              </label>
-            </div>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="2">
+              More Than Half of Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Several Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="0">
+              Not At All
+            </label>
           </div>
         </form>
       </div>
 
       <div class="container box is-mobile question-page" id="worryThings">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile subtitle">
@@ -811,35 +785,32 @@
         <hr />
 
         <form name="worryThings" action="#">
-          <div class="field">
-            <label class="radio" for="3">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="3">
               Nearly Every Day
             </label>
-          </div>
-            <div class="field">
-              <label class="radio" for="2">
-                <input type="radio" name="answer" value="2">
-                More Than Half of Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="1">
-                Several Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="0">
-                <input type="radio" name="answer" value="0">
-                Not At All
-              </label>
-            </div>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="2">
+              More Than Half of Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Several Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="0">
+              Not At All
+            </label>
           </div>
         </form>
       </div>
 
       <div class="container box is-mobile question-page" id="relax">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile subtitle">
@@ -855,35 +826,32 @@
         <hr />
 
         <form name="relax" action="#">
-          <div class="field">
-            <label class="radio" for="3">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="3">
               Nearly Every Day
             </label>
-          </div>
-            <div class="field">
-              <label class="radio" for="2">
-                <input type="radio" name="answer" value="2">
-                More Than Half of Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="1">
-                Several Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="0">
-                <input type="radio" name="answer" value="0">
-                Not At All
-              </label>
-            </div>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="2">
+              More Than Half of Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Several Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="0">
+              Not At All
+            </label>
           </div>
         </form>
       </div>
 
-      <div class="container box is-mobile question-page" id="worryThings">
+      <div class="container box is-mobile question-page" id="restless">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile subtitle">
@@ -898,36 +866,33 @@
 
         <hr />
 
-        <form name="worryThings" action="#">
-          <div class="field">
-            <label class="radio" for="3">
+        <form name="restless" action="#">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="3">
               Nearly Every Day
             </label>
-          </div>
-            <div class="field">
-              <label class="radio" for="2">
-                <input type="radio" name="answer" value="2">
-                More Than Half of Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="1">
-                Several Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="0">
-                <input type="radio" name="answer" value="0">
-                Not At All
-              </label>
-            </div>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="2">
+              More Than Half of Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Several Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="0">
+              Not At All
+            </label>
           </div>
         </form>
       </div>
 
       <div class="container box is-mobile question-page" id="annoyed">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile subtitle">
@@ -943,35 +908,32 @@
         <hr />
 
         <form name="annoyed" action="#">
-          <div class="field">
-            <label class="radio" for="3">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="3">
               Nearly Every Day
             </label>
-          </div>
-            <div class="field">
-              <label class="radio" for="2">
-                <input type="radio" name="answer" value="2">
-                More Than Half of Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="1">
-                Several Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="0">
-                <input type="radio" name="answer" value="0">
-                Not At All
-              </label>
-            </div>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="2">
+              More Than Half of Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Several Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="0">
+              Not At All
+            </label>
           </div>
         </form>
       </div>
 
       <div class="container box is-mobile question-page" id="afraid">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile subtitle">
@@ -987,35 +949,32 @@
         <hr />
 
         <form name="afraid" action="#">
-          <div class="field">
-            <label class="radio" for="3">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="3">
               Nearly Every Day
             </label>
-          </div>
-            <div class="field">
-              <label class="radio" for="2">
-                <input type="radio" name="answer" value="2">
-                More Than Half of Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="1">
-                Several Days
-              </label>
-            </div>
-            <div class="field">
-              <label class="radio" for="0">
-                <input type="radio" name="answer" value="0">
-                Not At All
-              </label>
-            </div>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="2">
+              More Than Half of Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="1">
+              Several Days
+            </label>
+            <br>
+            <label class="radio">
+              <input type="radio" name="answer" value="0">
+              Not At All
+            </label>
           </div>
         </form>
       </div>
 
       <div class="container box is-mobile question-page" id="treatment">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <p class="is-size-5-tablet is-size-6-mobile title">
           Have you tried anxiety or depression treatment before?
         </p>
@@ -1023,22 +982,24 @@
         <hr />
 
         <form name="treatment" action="#">
-          <div class="field">
-            <label class="radio" for="0">
+          <div class="control">
+            <label class="radio">
               <input type="radio" name="answer" value="1">
               Yes
             </label>
           </div>
-            <div class="field">
-              <label class="radio" for="1">
-                <input type="radio" name="answer" value="0">
-                No
-              </label>
-            </div>
+          <br>
+          <div class="control">
+            <label class="radio">
+              <input type="radio" name="answer" value="0">
+              No
+            </label>
+          </div>
         </form>
       </div>
 
       <div class="container box is-mobile question-page" id="treatmentsTried">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <p class="is-size-3 is-size-6-mobile title">
           What type of treatment have you tried?
         </p>
@@ -1089,6 +1050,7 @@
       </div>
 
       <div class="container box is-mobile question-page" id="summary">
+        <i class="fa-solid fa-arrow-left backArrow"></i>
         <div class="columns is-mobile is-vcentered">
           <div class="column">
             <p class="is-size-3 is-size-6-mobile">

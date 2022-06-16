@@ -1,14 +1,13 @@
 const quizStart = document.getElementById('quizStart');
 const nextButtons = Array.from(document.querySelectorAll('.submit'));
-const backArrow = document.getElementById('backArrow');
 const questionPages = Array.from(document.querySelectorAll('.question-page'));
-const forms = Array.from(document.querySelectorAll('form'));
+const resourcesRead = document.getElementById('resourcesRead');
 
 for (let i = 1; i < questionPages.length; i++) {
   questionPages[i].style.display = 'none';
 }
 
-const userData = [];
+const userData = {};
 let currentPage = 0;
 
 console.log('🚀 ~ file: index.js ~ line 5 ~ questionPages', questionPages);
@@ -18,68 +17,69 @@ quizStart.addEventListener('click', () => {
   questionPages[++currentPage].style.display = 'block';
 });
 
-const inputs = Array.from(document.querySelectorAll("input[type='radio']"));
-inputs.forEach((input) =>
-  input.addEventListener('click', (e) => {
-    console.log(
-      '🚀 ~ file: index.js ~ line 26 ~ input.addEventListener ~ e',
-      parseInt(e.target.value)
-    );
-  })
-);
+function addGlobalEventListener(type, selector, callback) {
+  document.addEventListener(type, function (e) {
+    if (e.target.matches(selector)) callback(e);
+  });
+}
 
-forms.forEach((form) => {
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    switch (currentPage) {
-      case 0:
-        userData.push({
-          firstName: firstName.value,
-          zipCode: zipCode.value,
-        });
-        break;
-      case 1:
-        const symptoms = [];
-        Array.from(form.elements).forEach((symptom) => {
-          if (symptom.checked) {
-            symptoms.push(symptom.name);
-          }
-        });
-        userData[1] = { symptoms: [...symptoms] };
-        break;
-    }
+addGlobalEventListener('click', "input[type='radio']", function (e) {
+  userData[e.target.form.name] = parseInt(e.target.value);
+  console.log('🚀 ~ file: index.js ~ line 36 ~ userData', userData);
+  if (
+    (e.target.form.name === 'selfHarm' && e.target.value === '0') ||
+    (e.target.form.name === 'selfHarmDetail' && e.target.value === '1') ||
+    (e.target.form.name === 'treatment' && e.target.value === '0')
+  ) {
+    clearPage();
+    currentPage += 2;
+    renderPage();
+  } else {
     clearPage();
     currentPage++;
     renderPage();
-    renderArrow();
-    console.log(userData);
-  });
-});
-
-backArrow.addEventListener('click', () => {
-  clearPage();
-  currentPage--;
-  renderPage();
-  renderArrow();
-});
-
-const renderArrow = () => {
-  if (currentPage === 0) {
-    backArrow.style.display = 'none';
-  } else {
-    backArrow.style.display = 'block';
   }
-};
+});
+
+addGlobalEventListener('submit', 'form', function (e) {
+  e.preventDefault();
+  const elements = [];
+  Array.from(e.target.elements).forEach((el) => {
+    if (el.checked) elements.push(el.name);
+  });
+  userData[e.target.name] = [...elements];
+  clearPage();
+  currentPage++;
+  renderPage();
+  console.log(userData);
+});
+
+addGlobalEventListener('click', '#resourcesRead', function (e) {
+  clearPage();
+  currentPage += 2;
+  renderPage();
+});
+
+addGlobalEventListener('click', '.backArrow', function (e) {
+  if (
+    e.target.parentElement.id === 'help' ||
+    e.target.parentElement.id === 'summary'
+  ) {
+    clearPage();
+    currentPage -= 2;
+    renderPage();
+  } else {
+    clearPage();
+    currentPage--;
+    renderPage();
+  }
+});
 
 const renderPage = () => {
   if (currentPage === questionPages.length - 1) {
     const userInfo = document.getElementById('userInfo');
-    userData.forEach((data) => {
-      Object.keys(data).forEach((key) => {
-        const div = document.createElement('div');
-        div.innerText = `${key}: ${data[key]}`;
-        userInfo.appendChild(div);
-      });
+    Object.keys(userData).forEach((key) => {
+      userInfo.innerHTML += `<p>${key}: ${userData[key]}</p>`;
     });
   }
   questionPages[currentPage].style.display = 'block';

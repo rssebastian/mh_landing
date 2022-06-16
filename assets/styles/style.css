@@ -76,12 +76,12 @@ form {
     height: 110px;
 }
 
-#backArrow {
-    display: none;
+.backArrow {
     margin: 1rem;
+
 }
 
-#backArrow:hover {
+.backArrow:hover {
     cursor: pointer;
 }
 
