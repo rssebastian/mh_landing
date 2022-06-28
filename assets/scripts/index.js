@@ -2,6 +2,10 @@ const quizStart = document.getElementById('quizStart');
 const nextButtons = Array.from(document.querySelectorAll('.submit'));
 const questionPages = Array.from(document.querySelectorAll('.question-page'));
 const resourcesRead = document.getElementById('resourcesRead');
+const progressBar = document.getElementsByClassName('progress-bar')[0];
+
+console.log(questionPages.length);
+console.log(questionPages);
 
 for (let i = 1; i < questionPages.length; i++) {
   questionPages[i].style.display = 'none';
@@ -10,11 +14,10 @@ for (let i = 1; i < questionPages.length; i++) {
 const userData = {};
 let currentPage = 0;
 
-console.log('🚀 ~ file: index.js ~ line 5 ~ questionPages', questionPages);
-
 quizStart.addEventListener('click', () => {
   questionPages[currentPage].style.display = 'none';
   questionPages[++currentPage].style.display = 'block';
+  renderProgressBar();
 });
 
 function addGlobalEventListener(type, selector, callback) {
@@ -25,20 +28,24 @@ function addGlobalEventListener(type, selector, callback) {
 
 addGlobalEventListener('click', "input[type='radio']", function (e) {
   userData[e.target.form.name] = parseInt(e.target.value);
-  console.log('🚀 ~ file: index.js ~ line 36 ~ userData', userData);
-  if (
-    (e.target.form.name === 'selfHarm' && e.target.value === '0') ||
-    (e.target.form.name === 'selfHarmDetail' && e.target.value === '1') ||
-    (e.target.form.name === 'treatment' && e.target.value === '0')
-  ) {
-    clearPage();
-    currentPage += 2;
-    renderPage();
-  } else {
-    clearPage();
-    currentPage++;
-    renderPage();
-  }
+  document.body.style.cursor = 'wait';
+  setTimeout(function () {
+    if (
+      (e.target.form.name === 'selfHarm' && e.target.value === '0') ||
+      (e.target.form.name === 'selfHarmDetail' && e.target.value === '1') ||
+      (e.target.form.name === 'treatment' && e.target.value === '0')
+    ) {
+      clearPage();
+      currentPage += 2;
+      renderPage();
+      document.body.style.cursor = 'auto';
+    } else {
+      clearPage();
+      currentPage++;
+      renderPage();
+      document.body.style.cursor = 'auto';
+    }
+  }, 300);
 });
 
 addGlobalEventListener('submit', 'form', function (e) {
@@ -51,7 +58,6 @@ addGlobalEventListener('submit', 'form', function (e) {
   clearPage();
   currentPage++;
   renderPage();
-  console.log(userData);
 });
 
 addGlobalEventListener('click', '#resourcesRead', function (e) {
@@ -63,7 +69,8 @@ addGlobalEventListener('click', '#resourcesRead', function (e) {
 addGlobalEventListener('click', '.backArrow', function (e) {
   if (
     e.target.parentElement.id === 'help' ||
-    e.target.parentElement.id === 'summary'
+    e.target.parentElement.id === 'summary' ||
+    e.target.parentElement.id === 'tasks'
   ) {
     clearPage();
     currentPage -= 2;
@@ -82,9 +89,21 @@ const renderPage = () => {
       userInfo.innerHTML += `<p>${key}: ${userData[key]}</p>`;
     });
   }
+  renderProgressBar();
   questionPages[currentPage].style.display = 'block';
 };
 
 const clearPage = () => {
   questionPages[currentPage].style.display = 'none';
+};
+
+const renderProgressBar = () => {
+  if (currentPage === 0) {
+    progressBar.style.display = 'none';
+  } else {
+    progressBar.style.display = 'block';
+    const width = Math.floor(((currentPage + 1) / questionPages.length) * 100);
+    progressBar.style.setProperty('--width', width);
+    progressBar.setAttribute('data-label', width + '%');
+  }
 };
