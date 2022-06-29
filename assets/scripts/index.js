@@ -3,9 +3,9 @@ const nextButtons = Array.from(document.querySelectorAll('.submit'));
 const questionPages = Array.from(document.querySelectorAll('.question-page'));
 const resourcesRead = document.getElementById('resourcesRead');
 const progressBar = document.getElementsByClassName('progress-bar')[0];
-
-console.log(questionPages.length);
-console.log(questionPages);
+const heroText = document.getElementById('hero-text');
+const main = document.getElementsByTagName('main')[0];
+const lastPage = document.getElementById('lastPage');
 
 for (let i = 1; i < questionPages.length; i++) {
   questionPages[i].style.display = 'none';
@@ -15,7 +15,10 @@ const userData = {};
 let currentPage = 0;
 
 quizStart.addEventListener('click', () => {
-  questionPages[currentPage].style.display = 'none';
+  clearPage();
+  // currentPage++;
+  // currentPage = 24;
+  // renderPage();
   questionPages[++currentPage].style.display = 'block';
   renderProgressBar();
 });
@@ -60,7 +63,7 @@ addGlobalEventListener('submit', 'form', function (e) {
   renderPage();
 });
 
-addGlobalEventListener('click', '#resourcesRead', function (e) {
+addGlobalEventListener('click', '#resourcesRead', function () {
   clearPage();
   currentPage += 2;
   renderPage();
@@ -69,7 +72,6 @@ addGlobalEventListener('click', '#resourcesRead', function (e) {
 addGlobalEventListener('click', '.backArrow', function (e) {
   if (
     e.target.parentElement.id === 'help' ||
-    e.target.parentElement.id === 'summary' ||
     e.target.parentElement.id === 'tasks'
   ) {
     clearPage();
@@ -83,14 +85,12 @@ addGlobalEventListener('click', '.backArrow', function (e) {
 });
 
 const renderPage = () => {
-  if (currentPage === questionPages.length - 1) {
-    const userInfo = document.getElementById('userInfo');
-    Object.keys(userData).forEach((key) => {
-      userInfo.innerHTML += `<p>${key}: ${userData[key]}</p>`;
-    });
+  if (currentPage === questionPages.length) {
+    lastPageRender();
+  } else {
+    renderProgressBar();
+    questionPages[currentPage].style.display = 'block';
   }
-  renderProgressBar();
-  questionPages[currentPage].style.display = 'block';
 };
 
 const clearPage = () => {
@@ -106,4 +106,14 @@ const renderProgressBar = () => {
     progressBar.style.setProperty('--width', width);
     progressBar.setAttribute('data-label', width + '%');
   }
+};
+
+const lastPageRender = () => {
+  heroText.innerText = 'Thank you for taking our quiz!';
+  main.style.display = 'none';
+  lastPage.style.display = 'block';
+  // const userInfo = document.getElementById('userInfo');
+  //   Object.keys(userData).forEach((key) => {
+  //     userInfo.innerHTML += `<p>${key}: ${userData[key]}</p>`;
+  //   });
 };

@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Arial', sans-serif;
     display: flex;
@@ -46,6 +52,7 @@ form {
     text-align: center;
     padding: 1.5rem;
     background-color: #e1ffff;
+    margin-bottom: 3rem;
 }
 
 
@@ -96,4 +103,103 @@ form {
 
 .backArrow:hover {
     cursor: pointer;
+}
+
+.fa-face-smile {
+    color: rgb(255,184,2);
+}
+
+#lastPage{
+    display: none;
+}
+
+.recommended {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 30px;
+    padding-bottom: 60px;
+}
+
+.recommended-items {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.recommended-item {
+    background-color: #ecfafe;
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 10px 25px rgb(0 0 0 / 25%);
+    overflow: hidden;
+    transition: 0.3s all;
+    margin: auto 0.5rem;
+}
+
+.recommended-item.big:hover {
+    transform: translateY(-10px) scale(1.1);
+    box-shadow: 0 10px 20px rgb(0 0 0 / 35%);
+}
+
+.recommended-item.big {
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+.recommended-item.small:hover {
+    transform: translateY(-10px) scale(0.9);
+    box-shadow: 0 10px 20px rgb(0 0 0 / 35%);
+}
+
+.rank {
+    position: absolute !important;
+    right: 0;
+    top: 0;
+    padding: 10px;
+    font-size: 30px;
+    background-color: #fff;
+    color: #ffb800;
+    font-weight: 800;
+}
+
+.recommended-item a.btn {
+    margin-top: 20px;
+}
+
+a.btn {
+    background-color: #ffb800;
+    color: #fff !important;
+    padding: 10px 10px !important;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 15%);
+    transition: 0.3s transform;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.button.is-warning {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow:0;
+}
+
+.trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 0;
+    background-color: #fff;
+    border: 10px solid #ecfafe;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgb(0 0 0 / 25%);
+    width: 100%;
 }
