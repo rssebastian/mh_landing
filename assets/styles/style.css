@@ -15,12 +15,13 @@ body {
 }
 
 main {
-    padding: 1.5rem;
+    padding: 0.5rem;
     height: 100%;
     box-shadow: 0 10px 25px rgb(0 0 0 / 25%);
     background-color: #e1ffff;
     border-radius: 25px;
-    margin: 3rem auto;
+    margin: 1.5rem auto;
+    max-width: 768px;
 }
 
 form {
@@ -34,7 +35,7 @@ form {
 
 .box {
     height: 100%;
-    margin: 0 auto;
+    margin: 0 1rem;
     padding: 3rem;
 }
 
@@ -55,6 +56,14 @@ form {
     margin-bottom: 3rem;
 }
 
+.icon {
+    margin: 0 1rem 0 0;
+}
+
+.icon-text {
+    margin-bottom: 1rem; 
+}
+
 
 .input {
     font-size: 1.25rem;
@@ -66,7 +75,7 @@ form {
 
 .progress-bar{
     position: relative;
-    width: 500px;
+    /* width: 500px; */
     height: 3rem;
     background-color: white;
     margin: 0 auto 1.5rem;
@@ -94,11 +103,6 @@ form {
 
 .submit {
     margin-top: 1.5rem;
-}
-
-.backArrow {
-    margin-bottom: 1rem;
-    padding: 0;
 }
 
 .backArrow:hover {
@@ -202,4 +206,14 @@ a.btn {
     border-radius: 20px;
     box-shadow: 0 10px 25px rgb(0 0 0 / 25%);
     width: 100%;
+}
+
+.icon-text {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.icon-label {
+    font-size: large;
 }

@@ -42,11 +42,13 @@ addGlobalEventListener('click', "input[type='radio']", function (e) {
       currentPage += 2;
       renderPage();
       document.body.style.cursor = 'auto';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       clearPage();
       currentPage++;
       renderPage();
       document.body.style.cursor = 'auto';
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, 300);
 });
@@ -76,20 +78,25 @@ addGlobalEventListener('click', '.backArrow', function (e) {
   ) {
     clearPage();
     currentPage -= 2;
+    questionPages[currentPage];
     renderPage();
+    questionPages[currentPage].getElementsByTagName('form')[0].reset();
   } else {
     clearPage();
     currentPage--;
     renderPage();
+    questionPages[currentPage].getElementsByTagName('form')[0].reset();
   }
 });
 
 const renderPage = () => {
   if (currentPage === questionPages.length) {
     lastPageRender();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   } else {
     renderProgressBar();
     questionPages[currentPage].style.display = 'block';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 };
 
