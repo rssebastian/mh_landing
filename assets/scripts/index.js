@@ -13,6 +13,9 @@ for (let i = 1; i < questionPages.length; i++) {
 
 const userData = {};
 let currentPage = 0;
+let timeLeft = 4;
+let timeIncrement = timeLeft / questionPages.length;
+timeIncrement = parseFloat(timeIncrement.toFixed(2));
 
 quizStart.addEventListener('click', () => {
   clearPage();
@@ -40,15 +43,17 @@ addGlobalEventListener('click', "input[type='radio']", function (e) {
     ) {
       clearPage();
       currentPage += 2;
+      timeLeft -= timeIncrement * 2;
       renderPage();
       document.body.style.cursor = 'auto';
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       clearPage();
       currentPage++;
+      timeLeft -= timeIncrement;
       renderPage();
       document.body.style.cursor = 'auto';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      //window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   }, 300);
 });
@@ -62,6 +67,7 @@ addGlobalEventListener('submit', 'form', function (e) {
   userData[e.target.name] = [...elements];
   clearPage();
   currentPage++;
+  timeLeft -= timeIncrement;
   renderPage();
 });
 
@@ -78,14 +84,18 @@ addGlobalEventListener('click', '.backArrow', function (e) {
   ) {
     clearPage();
     currentPage -= 2;
+    timeLeft += timeIncrement * 2;
     questionPages[currentPage];
     renderPage();
-    questionPages[currentPage].getElementsByTagName('form')[0].reset();
+    if (currentPage !== 0)
+      questionPages[currentPage].getElementsByTagName('form')[0].reset();
   } else {
     clearPage();
     currentPage--;
+    if (timeLeft !== 4) timeLeft += timeIncrement;
     renderPage();
-    questionPages[currentPage].getElementsByTagName('form')[0].reset();
+    if (currentPage !== 0)
+      questionPages[currentPage].getElementsByTagName('form')[0].reset();
   }
 });
 
@@ -96,7 +106,8 @@ const renderPage = () => {
   } else {
     renderProgressBar();
     questionPages[currentPage].style.display = 'block';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    progressBar.scrollIntoView();
+    //window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 };
 
@@ -105,13 +116,15 @@ const clearPage = () => {
 };
 
 const renderProgressBar = () => {
-  if (currentPage === 0) {
-    progressBar.style.display = 'none';
+  progressBar.style.display = 'block';
+  const width = Math.floor(((currentPage + 1) / questionPages.length) * 100);
+  progressBar.style.setProperty('--width', width);
+  if (timeLeft > 1) {
+    progressBar.setAttribute('data-label', Math.floor(timeLeft) + ' MIN');
+  } else if (timeLeft > 0) {
+    progressBar.setAttribute('data-label', '< 1 MIN');
   } else {
-    progressBar.style.display = 'block';
-    const width = Math.floor(((currentPage + 1) / questionPages.length) * 100);
-    progressBar.style.setProperty('--width', width);
-    progressBar.setAttribute('data-label', width + '%');
+    progressBar.style.display = 'none';
   }
 };
 
@@ -119,8 +132,4 @@ const lastPageRender = () => {
   heroText.innerText = 'Thank you for taking our quiz!';
   main.style.display = 'none';
   lastPage.style.display = 'block';
-  // const userInfo = document.getElementById('userInfo');
-  //   Object.keys(userData).forEach((key) => {
-  //     userInfo.innerHTML += `<p>${key}: ${userData[key]}</p>`;
-  //   });
 };

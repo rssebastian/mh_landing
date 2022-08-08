@@ -7,18 +7,23 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: MessinaSans-Regular, Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-image: url(../images/quiz-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 main {
     padding: 0.5rem;
     height: 100%;
     box-shadow: 0 10px 25px rgb(0 0 0 / 25%);
-    background-color: #e1ffff;
+    background-color: rgb(52,61,85);
     border-radius: 25px;
     margin: 1.5rem auto;
     max-width: 768px;
@@ -26,6 +31,30 @@ main {
 
 form {
     margin: 1.5rem;
+}
+
+label {
+    border: 2px solid rgb(194, 197, 204);
+    padding: 1rem;
+    width: 100%;
+    margin: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.25ch;
+    font-size: 1.25rem;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+label > input {
+    min-width: 2rem;
+    min-height: 2rem;
+    background-color: rgb(229,241,255);
+    margin: 0.5rem;
+}
+
+.checkbox:hover, .radio:hover {
+    color: rgb(52, 85, 72);
 }
 
 .button {
@@ -39,6 +68,20 @@ form {
     padding: 3rem;
 }
 
+.checkbox {
+    display: flex;
+}
+
+.demo {
+    display: block;
+    margin: 1rem auto;
+}
+
+.radio {
+    display: flex;
+    margin: 0 auto;
+}
+
 .column > i {
     text-align: center;
     height: 100%;
@@ -48,12 +91,16 @@ form {
     margin: 1.5rem;
 }
 
+.footer {
+    padding: 1rem;
+}
+
 .hero {
     width: 100vw;
     text-align: center;
     padding: 1.5rem;
-    background-color: #e1ffff;
-    margin-bottom: 3rem;
+    background-color: rgba(225, 255, 255, 0.1);
+    margin-bottom: 0.5rem;
 }
 
 .icon {
@@ -82,7 +129,7 @@ form {
     border: 1px solid black;
     border-radius: 1.5rem;
     color: black;
-    display: none;
+    white-space: nowrap;
 }
 
 .progress-bar::before{
@@ -96,9 +143,10 @@ form {
     width: calc(var(--width, 0) * 1%);
     min-width: 2rem;
     max-width: calc(100% - 1rem);
-    background-color: #e1ffff;;
+    background-color: rgb(226,199,108);
     border-radius: 1rem;
     padding: 1em;
+    transition: width 1s;
 }
 
 .submit {
@@ -123,8 +171,18 @@ form {
     color: rgb(255,184,2);
 }
 
+#footer {
+    margin-bottom: 0;
+}
+
 #lastPage {
     display: none;
+}
+
+#summary {
+    background-color: rgba(225,255,255, 0.8);
+    padding: 1.5rem;
+    border-radius: 25px;
 }
 
 .recommended {
@@ -420,6 +478,7 @@ a.btn {
     }
 }
 
+/*hd*/
 @media screen and (max-width: 800px)
 {
     .list-items {
@@ -456,8 +515,12 @@ a.btn {
         font-weight: 600;
         text-decoration: none;
     }
+    main {
+        max-width: 100%;
+    }
 }
 
+/*tablets*/
 @media screen and (max-width: 600px) {
     .list-item {
         flex-direction: column;
@@ -485,6 +548,7 @@ a.btn {
     }
 }
 
+/*small screens/mobile*/
 @media screen and (max-width: 450px)
 {
     .list-items {
@@ -500,9 +564,13 @@ a.btn {
         font-weight: 600;
         text-decoration: none;
     }
+    .box {
+        padding: 1rem;
+    }
     
 }
 
+/*very large screen*/
 @media (min-width: 1499px){
     a.btn {
         background-color: #ffb800;
