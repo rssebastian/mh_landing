@@ -11,19 +11,16 @@ for (let i = 1; i < questionPages.length; i++) {
   questionPages[i].style.display = 'none';
 }
 
-const userData = {};
 let currentPage = 0;
 let timeLeft = 4;
 let timeIncrement = timeLeft / questionPages.length;
 timeIncrement = parseFloat(timeIncrement.toFixed(2));
 
 quizStart.addEventListener('click', () => {
-  clearPage();
-  // currentPage++;
-  // currentPage = 24;
-  // renderPage();
+  questionPages[currentPage].style.display = 'none';
   questionPages[++currentPage].style.display = 'block';
   renderProgressBar();
+  progressBar.scrollIntoView({ block: 'start', behavior: 'smooth' });
 });
 
 function addGlobalEventListener(type, selector, callback) {
@@ -33,7 +30,6 @@ function addGlobalEventListener(type, selector, callback) {
 }
 
 addGlobalEventListener('click', "input[type='radio']", function (e) {
-  userData[e.target.form.name] = parseInt(e.target.value);
   document.body.style.cursor = 'wait';
   setTimeout(function () {
     if (
@@ -41,63 +37,42 @@ addGlobalEventListener('click', "input[type='radio']", function (e) {
       (e.target.form.name === 'selfHarmDetail' && e.target.value === '1') ||
       (e.target.form.name === 'treatment' && e.target.value === '0')
     ) {
-      clearPage();
-      currentPage += 2;
-      timeLeft -= timeIncrement * 2;
-      renderPage();
-      document.body.style.cursor = 'auto';
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      turnPage(2);
     } else {
-      clearPage();
-      currentPage++;
-      timeLeft -= timeIncrement;
-      renderPage();
-      document.body.style.cursor = 'auto';
-      //window.scrollTo({ top: 0, behavior: 'smooth' });
+      turnPage(1);
     }
   }, 300);
 });
 
 addGlobalEventListener('submit', 'form', function (e) {
   e.preventDefault();
-  const elements = [];
-  Array.from(e.target.elements).forEach((el) => {
-    if (el.checked) elements.push(el.name);
-  });
-  userData[e.target.name] = [...elements];
-  clearPage();
-  currentPage++;
-  timeLeft -= timeIncrement;
-  renderPage();
+  turnPage(1);
 });
 
 addGlobalEventListener('click', '#resourcesRead', function () {
-  clearPage();
-  currentPage += 2;
-  renderPage();
+  turnPage(2);
 });
 
 addGlobalEventListener('click', '.backArrow', function (e) {
   if (
-    e.target.parentElement.id === 'help' ||
-    e.target.parentElement.id === 'tasks'
+    e.target.parentElement.parentElement.parentElement.id === 'help' ||
+    e.target.parentElement.parentElement.parentElement.id === 'tasks'
   ) {
-    clearPage();
-    currentPage -= 2;
-    timeLeft += timeIncrement * 2;
-    questionPages[currentPage];
-    renderPage();
-    if (currentPage !== 0)
-      questionPages[currentPage].getElementsByTagName('form')[0].reset();
+    turnPage(-2);
+    resetForm();
   } else {
-    clearPage();
-    currentPage--;
-    if (timeLeft !== 4) timeLeft += timeIncrement;
-    renderPage();
-    if (currentPage !== 0)
-      questionPages[currentPage].getElementsByTagName('form')[0].reset();
+    turnPage(-1);
+    resetForm();
   }
 });
+
+const turnPage = (page) => {
+  questionPages[currentPage].style.display = 'none';
+  currentPage += page;
+  if (timeLeft - timeIncrement * page <= 4) timeLeft -= timeIncrement * page;
+  renderPage();
+  document.body.style.cursor = 'auto';
+};
 
 const renderPage = () => {
   if (currentPage === questionPages.length) {
@@ -106,13 +81,8 @@ const renderPage = () => {
   } else {
     renderProgressBar();
     questionPages[currentPage].style.display = 'block';
-    progressBar.scrollIntoView();
-    //window.scrollTo({ top: 0, behavior: 'smooth' });
+    progressBar.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
-};
-
-const clearPage = () => {
-  questionPages[currentPage].style.display = 'none';
 };
 
 const renderProgressBar = () => {
@@ -132,4 +102,9 @@ const lastPageRender = () => {
   heroText.innerText = 'Thank you for taking our quiz!';
   main.style.display = 'none';
   lastPage.style.display = 'block';
+};
+
+const resetForm = () => {
+  if (questionPages[currentPage].getElementsByTagName('form').length > 0)
+    questionPages[currentPage].getElementsByTagName('form')[0].reset();
 };
