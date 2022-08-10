@@ -90,9 +90,12 @@ const renderProgressBar = () => {
   const width = Math.floor(((currentPage + 1) / questionPages.length) * 100);
   progressBar.style.setProperty('--width', width);
   if (timeLeft > 1) {
-    progressBar.setAttribute('data-label', Math.floor(timeLeft) + ' MIN');
+    progressBar.setAttribute(
+      'data-label',
+      Math.floor(timeLeft) + ' MIN TO COMPLETE'
+    );
   } else if (timeLeft > 0) {
-    progressBar.setAttribute('data-label', '< 1 MIN');
+    progressBar.setAttribute('data-label', '< 1 MIN TO COMPLETE');
   } else {
     progressBar.style.display = 'none';
   }

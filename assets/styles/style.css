@@ -60,6 +60,8 @@ label > input {
 .button {
     background-color: rgb(255,184,2);
     padding: 1.5rem;
+    margin: 0 auto;
+    max-width: 50%;
 }
 
 .box {
@@ -75,6 +77,9 @@ label > input {
 .demo {
     display: block;
     margin: 1rem auto;
+    height: 450px;
+    width: 200px;
+    border-radius: 5px;
 }
 
 .radio {
@@ -95,11 +100,14 @@ label > input {
     padding: 1rem;
 }
 
+.footer > .column{
+    max-width: 600px;
+}
+
 .hero {
     width: 100vw;
     text-align: center;
     padding: 1.5rem;
-    background-color: rgba(225, 255, 255, 0.1);
     margin-bottom: 0.5rem;
 }
 
@@ -169,6 +177,11 @@ label > input {
 
 .fa-face-smile {
     color: rgb(255,184,2);
+}
+
+#disclaimer {
+    font-size: 0.85rem;
+    font-style: italic;
 }
 
 #footer {
