@@ -3,6 +3,7 @@ const nextButtons = Array.from(document.querySelectorAll('.submit'));
 const questionPages = Array.from(document.querySelectorAll('.question-page'));
 const resourcesRead = document.getElementById('resourcesRead');
 const progressBar = document.getElementsByClassName('progress-bar')[0];
+const header = document.getElementsByTagName('header')[0];
 const heroText = document.getElementById('hero-text');
 const main = document.getElementsByTagName('main')[0];
 const lastPage = document.getElementById('lastPage');
@@ -18,6 +19,7 @@ timeIncrement = parseFloat(timeIncrement.toFixed(2));
 
 quizStart.addEventListener('click', () => {
   questionPages[currentPage].style.display = 'none';
+  header.style.display = 'none';
   questionPages[++currentPage].style.display = 'block';
   renderProgressBar();
   progressBar.scrollIntoView({ block: 'start', behavior: 'smooth' });
@@ -77,6 +79,11 @@ const turnPage = (page) => {
 const renderPage = () => {
   if (currentPage === questionPages.length) {
     lastPageRender();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  } else if (currentPage === 0) {
+    renderProgressBar();
+    header.style.display = 'block';
+    questionPages[currentPage].style.display = 'block';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   } else {
     renderProgressBar();
