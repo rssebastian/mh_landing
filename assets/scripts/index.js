@@ -86,7 +86,10 @@ const renderPage = () => {
     questionPages[currentPage].style.display = 'block';
     window.scrollTo({ top: 0, behavior: 'smooth' });
   } else {
-    renderProgressBar();
+    console.log(questionPages[currentPage].id);
+    if (questionPages[currentPage].id === 'help')
+      progressBar.style.display = 'none';
+    else renderProgressBar();
     questionPages[currentPage].style.display = 'block';
     progressBar.scrollIntoView({ block: 'start', behavior: 'smooth' });
   }
